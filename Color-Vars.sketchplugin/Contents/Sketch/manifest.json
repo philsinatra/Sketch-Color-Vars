@@ -1,6 +1,6 @@
 {
-  "name": "Sketch Color Variables",
-  "description": "A plugin to generate SCSS, LESS and CSS variables from element fill colors",
+  "name": "Sketch Color Vars",
+  "description": "A Sketch plugin that will export the fill color of selected layers to SCSS, LESS and CSS files.",
   "author": "Phil Sinatra",
   "authorEmail": "code@philsinatra.com",
   "homepage":"https://github.com/philsinatra/Sketch-Color-Vars",

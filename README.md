@@ -1,6 +1,13 @@
 # Sketch Color Variables
 
-A Sketch plugin that will export the fill color of selected layers to SCSS, LESS and CSS files. **Note**: this plugin is designed to work with solid color fills, gradient fills will not be exported.
+A Sketch plugin that will export the fill color of selected layers to SCSS, LESS and CSS files.
+
+## Installation
+
+1. Download the plugin.
+1. Double click "Color-Vars.sketchplugin" to install it.
+
+## How it works
 
 1. Name the layers your preferred variable names.
 1. Select the layers containing the colors you want exported.
@@ -12,9 +19,10 @@ Three files will be exported to your `~/Desktop/`
 - _color.less
 - _color.css
 
-## Installation
+## Limitations
 
-Copy the entire `Sketch-Color-Vars` folder to your _Plugins_ directory.
+1. Only solid fills will be exported, not gradients.
+1. Only the first solid fill will be exported (in cases where multiple fills are applied to a single shape/element).
 
 ## Example
 
@@ -45,3 +53,11 @@ $yellow: rgba(97%,91%,11%,1.00);
   --yellow: rgba(97%,91%,11%,1.00);
 }
 ```
+
+## What's next?
+
+[ ] Add select options dialog for user to spec which file type(s) should be exported.
+
+## Feedback
+
+Feedback and pull requests are welcome :)
