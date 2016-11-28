@@ -56,7 +56,7 @@ $yellow: rgba(97%,91%,11%,1.00);
 
 ## What's next?
 
-[ ] Add select options dialog for user to spec which file type(s) should be exported.
+- [ ] Add select options dialog for user to spec which file type(s) should be exported.
 
 ## Feedback
 
