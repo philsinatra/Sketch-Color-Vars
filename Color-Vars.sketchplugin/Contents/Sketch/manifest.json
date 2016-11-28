@@ -1,0 +1,26 @@
+{
+  "name": "Sketch Color Variables",
+  "description": "A plugin to generate SCSS, LESS and CSS variables from element fill colors",
+  "author": "Phil Sinatra",
+  "authorEmail": "code@philsinatra.com",
+  "homepage":"https://github.com/philsinatra/Sketch-Color-Vars",
+  "version": "1.0",
+  "commands" : [
+    {
+      "script" : "colorvars.cocoascript",
+      "shortcut": "shift cmd ,",
+      "name" : "Sketch Color Vars",
+      "handlers" : {
+        "run" : "onRun"
+      },
+      "identifier" : "colorvars"
+    }
+  ],
+  "menu" : {
+    "items" : [
+      "colorvars"
+    ],
+    "title" : "Sketch Color Vars"
+  },
+  "identifier" : ""
+}

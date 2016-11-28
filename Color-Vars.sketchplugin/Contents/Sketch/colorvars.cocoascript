@@ -1,0 +1,85 @@
+var app = NSApplication.sharedApplication();
+var color_array = [];
+var scss_string = '';
+var less_string = '';
+var css_string = ":root {";
+
+
+/**
+ * GET first visible fill color value of selected element
+ * @param  {string} layer : the selected layer
+ * @return {string} fill color value
+ */
+var firstVisibleFill = function(layer) {
+  for (var i = 0; i < layer.style().fills().count(); i++) {
+    var fill = layer.style().fills().objectAtIndex(i);
+    if (fill.isEnabled()) {
+      return fill;
+    }
+  }
+  return false;
+};
+
+
+/**
+ * Write a file to the ~/Desktop/
+ * @param  {string} string : text to be written in the file
+ * @param  {string} fn : file name
+ * @return {none}
+ */
+var writeFile = function(string, fn) {
+  var output = [@"" stringByAppendingString:string];
+  var path = "/Users/" + NSUserName() + "/Desktop/" + fn;
+  [output writeToFile:path atomically:true encoding:NSUTF8StringEncoding error:null]
+};
+
+
+var onRun = function(context) {
+  var doc = context.document;
+  var selectedLayers = context.selection;
+  var selectedCount = selectedLayers.count();
+
+  if (selectedCount == 0) {
+    doc.showMessage("No layers are selected");
+  } else {
+    for (var i = 0; i < selectedCount; i++) {
+      var layer = selectedLayers[i];
+      var layer_name = layer.name();
+      var color = firstVisibleFill(layer).color();
+      color = color.toString();
+
+      color = color.replace("r:", "");
+      color = color.replace("g:", "");
+      color = color.replace("b:", "");
+      color = color.replace("a:", "");
+      color = color.replace("(", "");
+      color = color.replace(")", "");
+
+      color_array = color.split(" ");
+
+      var red = Math.round(color_array[0] * 100) + '%';
+      var green = Math.round(color_array[1] * 100) + '%';
+      var blue = Math.round(color_array[2] * 100) + '%';
+      var alpha = parseFloat(color_array[3]).toFixed(2);
+
+      scss_string += "$" + layer_name + ": rgba(";
+      scss_string += red + "," + green + "," + blue + "," + alpha + "); ";
+      scss_string += "\n";
+
+      less_string += "@" + layer_name + ": rgba(";
+      less_string += red + "," + green + "," + blue + "," + alpha + "); ";
+      less_string += "\n";
+
+      css_string += "\n";
+      css_string += "  --" + layer_name + ": rgba(";
+      css_string += red + "," + green + "," + blue + "," + alpha + "); ";
+    }
+  }
+  css_string += "\n}";
+
+  writeFile(scss_string, '_color.scss');
+  writeFile(less_string, '_color.less');
+  writeFile(css_string, '_color.css');
+
+  doc.showMessage("Files generated on ~/Desktop/");
+};
