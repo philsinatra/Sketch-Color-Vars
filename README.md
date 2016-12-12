@@ -7,6 +7,12 @@ A Sketch plugin that will export the fill color of selected layers to SCSS, LESS
 1. Download the plugin.
 1. Double click "Color-Vars.sketchplugin" to install it.
 
+**OR**
+
+Use [Sketch Toolbox](http://sketchtoolbox.com)
+
+![](http://cdn.philsinatra.com/libraries/atom/Sketch-Color-Vars/skech_toolbox-color_vars.png)
+
 ## How it works
 
 1. Name the layers your preferred variable names.
@@ -26,7 +32,7 @@ Three files will be exported to your `~/Desktop/`
 
 ## Example
 
-![](example.png)
+![](http://cdn.philsinatra.com/libraries/atom/Sketch-Color-Vars/example.png)
 
 ```scss
 // _color.scss
