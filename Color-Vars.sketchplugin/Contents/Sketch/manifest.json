@@ -4,7 +4,7 @@
   "author": "Phil Sinatra",
   "authorEmail": "code@philsinatra.com",
   "homepage":"https://github.com/philsinatra/Sketch-Color-Vars",
-  "version": "1.0",
+  "version": "1.1.0",
   "commands" : [
     {
       "script" : "colorvars.cocoascript",

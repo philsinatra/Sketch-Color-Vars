@@ -11,7 +11,7 @@ A Sketch plugin that will export the fill color of selected layers to SCSS, LESS
 
 Use [Sketch Toolbox](http://sketchtoolbox.com)
 
-![](http://cdn.philsinatra.com/libraries/atom/Sketch-Color-Vars/skech_toolbox-color_vars.png)
+<img src="http://cdn.philsinatra.com/libraries/atom/Sketch-Color-Vars/skech_toolbox-color_vars.png" alt="Sketch Toolbox window showing Sketch Color Vars plugin" style="width: 450px">
 
 ## How it works
 
@@ -19,11 +19,11 @@ Use [Sketch Toolbox](http://sketchtoolbox.com)
 1. Select the layers containing the colors you want exported.
 1. Run the plugin via the Plugins menu, or via the keyboard shortcut <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>,</kbd>
 
-Three files will be exported to your `~/Desktop/`
+You will be prompted where to save the variable files:
 
-- _color.scss
-- _color.less
-- _color.css
+- _colors.scss
+- _colors.less
+- _colors.css
 
 ## Limitations
 
@@ -32,37 +32,35 @@ Three files will be exported to your `~/Desktop/`
 
 ## Example
 
-![](http://cdn.philsinatra.com/libraries/atom/Sketch-Color-Vars/example.png)
+![](http://cdn.philsinatra.com/libraries/sketch/Sketch-Color-Vars/sketch-example-01.png)
 
 ```scss
 // _color.scss
-$red: rgba(82%,1%,11%,1.00);
-$blue: rgba(29%,56%,89%,1.00);
-$green: rgba(49%,83%,13%,1.00);
-$yellow: rgba(97%,91%,11%,1.00);
+$red-D0011B: rgba(82%,0%,11%,1.00);
+$green-417505: rgba(25%,46%,2%,1.00);
+$blue-4990E2: rgba(29%,56%,89%,1.00);
 ```
 
 ```less
 // _color.less
-@red: rgba(82%,1%,11%,1.00);
-@blue: rgba(29%,56%,89%,1.00);
-@green: rgba(49%,83%,13%,1.00);
-@yellow: rgba(97%,91%,11%,1.00);
+@red-D0011B: rgba(82%,0%,11%,1.00);
+@green-417505: rgba(25%,46%,2%,1.00);
+@blue-4990E2: rgba(29%,56%,89%,1.00);
 ```
 
 ```css
 /* _color.css */
 :root {
-  --red: rgba(82%,1%,11%,1.00);
-  --blue: rgba(29%,56%,89%,1.00);
-  --green: rgba(49%,83%,13%,1.00);
-  --yellow: rgba(97%,91%,11%,1.00);
+  --red-D0011B: rgba(82%,0%,11%,1.00);
+  --green-417505: rgba(25%,46%,2%,1.00);
+  --blue-4990E2: rgba(29%,56%,89%,1.00);
 }
 ```
 
 ## What's next?
 
 - [ ] Add select options dialog for user to spec which file type(s) should be exported.
+- [ ] Add option for color value type (hex, rgb, rgba).
 
 ## Feedback
 

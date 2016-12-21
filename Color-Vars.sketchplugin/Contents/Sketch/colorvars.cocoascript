@@ -1,60 +1,55 @@
+@import "functions.js"
+
+/** Variables
+ ---------------------------------------------------------*/
 var app = NSApplication.sharedApplication();
-var header = '/*! Sketch-Color-Vars v1.0.0 | MIT License | github.com/philsinatra/Sketch-Color-Vars/ */';
-
+var header = '/*! Sketch-Color-Vars v1.1.0 | MIT License | github.com/philsinatra/Sketch-Color-Vars/ */';
+var file_path = '';
 var color_array = [];
-var scss_string = header + "\n";
-var less_string = header + "\n";
-var css_string = header + "\n" + ":root {";
-
-/**
- * GET first visible fill color value of selected element
- * @param  {string} layer : the selected layer
- * @return {string} fill color value
- */
-var firstVisibleFill = function(layer) {
-  for (var i = 0; i < layer.style().fills().count(); i++) {
-    var fill = layer.style().fills().objectAtIndex(i);
-    if (fill.isEnabled()) {
-      return fill;
-    }
-  }
-  return false;
-};
+var str_scss = header + "\n";
+var str_less = header + "\n";
+var str_css = header + "\n" + ":root {";
 
 
-/**
- * Write a file to the ~/Desktop/
- * @param  {string} string : text to be written in the file
- * @param  {string} fn : file name
- * @return {none}
- */
-var writeFile = function(string, fn) {
-  var output = [@"" stringByAppendingString:string];
-  var path = "/Users/" + NSUserName() + "/Desktop/" + fn;
-  [output writeToFile:path atomically:true encoding:NSUTF8StringEncoding error:null]
-};
-
-
+/** onRun Event
+ ---------------------------------------------------------*/
 var onRun = function(context) {
   var doc = context.document;
   var selectedLayers = context.selection;
   var selectedCount = selectedLayers.count();
+	var fileTypes = [NSArray arrayWithObjects:@'scss',@'less',@'css',nil];
+
+	var panel = [NSOpenPanel openPanel];
+  [panel setCanChooseDirectories:true];
+  [panel setCanCreateDirectories:true];
+	[panel setAllowedFileTypes:fileTypes];
+  panel.setPrompt('Export Color Variables');
+
+  var clicked = [panel runModal];
+
+  if (clicked == NSFileHandlingPanelOKButton) {
+    var isDirectory = true;
+    var firstURL = [[panel URLs] objectAtIndex:0];
+    file_path = [NSString stringWithFormat:@'%@', firstURL];
+
+    if (0 === file_path.indexOf('file://'))
+      file_path = file_path.substring(7);
+  }
 
   if (selectedCount == 0) {
-    doc.showMessage("No layers are selected");
+    doc.showMessage('Please selected at least one layer.');
   } else {
     for (var i = 0; i < selectedCount; i++) {
       var layer = selectedLayers[i];
       var layer_name = layer.name();
-      var color = firstVisibleFill(layer).color();
-      color = color.toString();
+      var color = String(firstVisibleFill(layer).color());
 
-      color = color.replace("r:", "");
-      color = color.replace("g:", "");
-      color = color.replace("b:", "");
-      color = color.replace("a:", "");
-      color = color.replace("(", "");
-      color = color.replace(")", "");
+      color = color.replace('r:', '');
+      color = color.replace('g:', '');
+      color = color.replace('b:', '');
+      color = color.replace('a:', '');
+      color = color.replace('(', '');
+      color = color.replace(')', '');
 
       color_array = color.split(" ");
 
@@ -63,24 +58,31 @@ var onRun = function(context) {
       var blue = Math.round(color_array[2] * 100) + '%';
       var alpha = parseFloat(color_array[3]).toFixed(2);
 
-      scss_string += "$" + layer_name + ": rgba(";
-      scss_string += red + "," + green + "," + blue + "," + alpha + "); ";
-      scss_string += "\n";
+      str_scss += "$" + layer_name + ": rgba(";
+      str_scss += red + "," + green + "," + blue + "," + alpha + "); ";
+      str_scss += "\n";
 
-      less_string += "@" + layer_name + ": rgba(";
-      less_string += red + "," + green + "," + blue + "," + alpha + "); ";
-      less_string += "\n";
+      str_less += "@" + layer_name + ": rgba(";
+      str_less += red + "," + green + "," + blue + "," + alpha + "); ";
+      str_less += "\n";
 
-      css_string += "\n";
-      css_string += "  --" + layer_name + ": rgba(";
-      css_string += red + "," + green + "," + blue + "," + alpha + "); ";
+      str_css += "\n";
+      str_css += "  --" + layer_name + ": rgba(";
+      str_css += red + "," + green + "," + blue + "," + alpha + "); ";
     }
   }
-  css_string += "\n}";
+  str_css += "\n}";
 
-  writeFile(scss_string, '_color.scss');
-  writeFile(less_string, '_color.less');
-  writeFile(css_string, '_color.css');
+	var output = [
+		[str_scss, 'scss'],
+		[str_less, 'less'],
+		[str_css, 'css']
+	];
 
-  doc.showMessage("Files generated on ~/Desktop/");
+	for (z = 0; z < output.length; z++) {
+		writeFile(output[z][0], output[z][1]);
+	}
+
+	var alertMessage = '_colors.scss|less|css saved to: ' + file_path;
+  alert('Color Variables Exported!', alertMessage);
 };
