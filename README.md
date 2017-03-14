@@ -11,7 +11,7 @@ A Sketch plugin that will export the fill color of selected layers to SCSS, LESS
 
 Use [Sketch Toolbox](http://sketchtoolbox.com)
 
-<img src="http://cdn.philsinatra.com/libraries/atom/Sketch-Color-Vars/skech_toolbox-color_vars.png" alt="Sketch Toolbox window showing Sketch Color Vars plugin" style="width: 450px">
+<img src="http://cdn.philsinatra.com/libraries/sketch/Sketch-Color-Vars/skech_toolbox-color_vars.png" alt="Sketch Toolbox window showing Sketch Color Vars plugin" style="width: 450px">
 
 ## How it works
 
