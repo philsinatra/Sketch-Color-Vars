@@ -1,3 +1,6 @@
+[![GitHub tag](https://img.shields.io/github/tag/philsinatra/Sketch-Color-Vars.svg?style=flat-square)]()
+[![license](https://img.shields.io/github/license/philsinatra/Sketch-Color-Vars.svg?style=flat-square)]()
+
 # Sketch Color Variables
 
 A Sketch plugin that will export the fill color of selected layers to SCSS, LESS and CSS files.

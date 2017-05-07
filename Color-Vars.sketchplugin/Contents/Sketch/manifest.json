@@ -4,7 +4,13 @@
   "author": "Phil Sinatra",
   "authorEmail": "code@philsinatra.com",
   "homepage":"https://github.com/philsinatra/Sketch-Color-Vars",
-  "version": "1.1.0",
+  "version": "1.1.1",
+  "identifier" : "com.sketch.sketch-color-vars",
+  "bugs": {
+    "url": "https://github.com/philsinatra/Sketch-Color-Vars/issues"
+  },
+  "homepage": "https://github.com/philsinatra/Sketch-Color-Vars",
+  "license": "MIT",
   "commands" : [
     {
       "script" : "colorvars.cocoascript",
@@ -21,6 +27,5 @@
       "colorvars"
     ],
     "title" : "Sketch Color Vars"
-  },
-  "identifier" : ""
+  }
 }
