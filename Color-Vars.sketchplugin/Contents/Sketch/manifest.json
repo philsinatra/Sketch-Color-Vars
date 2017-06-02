@@ -10,6 +10,7 @@
     "url": "https://github.com/philsinatra/Sketch-Color-Vars/issues"
   },
   "homepage": "https://github.com/philsinatra/Sketch-Color-Vars",
+  "appcast": "https://github.com/philsinatra/Sketch-Color-Vars/blob/187685258cbda3e5cc3958612c4385d0544be130/appcast.xml",
   "license": "MIT",
   "commands" : [
     {
