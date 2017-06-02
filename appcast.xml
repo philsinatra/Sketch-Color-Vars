@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Sketch Color Vars Plugin</title>
+    <link>https://github.com/philsinatra/Sketch-Color-Vars</link>
+    <description>A Sketch plugin that will export the fill color of selected layers to SCSS, LESS and CSS files.</description>
+    <language>en</language>
+      <item>
+        <title>Version 1.1.1</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>Update version 1.1.1</li>
+            </ul>
+          ]]>
+        </description>
+        <pubDate>Sun, 07 May 2017 10:00:00 +0000</pubDate>
+        <enclosure url="https://github.com/philsinatra/Sketch-Color-Vars/archive/1.1.1.zip" sparkle:version="1.1.1" length="5825" type="application/octet-stream" />
+      </item>
+  </channel>
+</rss>
