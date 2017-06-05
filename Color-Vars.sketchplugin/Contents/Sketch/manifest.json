@@ -4,13 +4,13 @@
   "author": "Phil Sinatra",
   "authorEmail": "code@philsinatra.com",
   "homepage":"https://github.com/philsinatra/Sketch-Color-Vars",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "identifier" : "com.sketch.sketch-color-vars",
   "bugs": {
     "url": "https://github.com/philsinatra/Sketch-Color-Vars/issues"
   },
   "homepage": "https://github.com/philsinatra/Sketch-Color-Vars",
-  "appcast": "https://github.com/philsinatra/Sketch-Color-Vars/blob/187685258cbda3e5cc3958612c4385d0544be130/appcast.xml",
+  "appcast": "https://raw.githubusercontent.com/philsinatra/Sketch-Color-Vars/master/appcast.xml",
   "license": "MIT",
   "commands" : [
     {

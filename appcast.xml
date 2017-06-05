@@ -17,5 +17,17 @@
         <pubDate>Sun, 07 May 2017 10:00:00 +0000</pubDate>
         <enclosure url="https://github.com/philsinatra/Sketch-Color-Vars/archive/1.1.1.zip" sparkle:version="1.1.1" length="5825" type="application/octet-stream" />
       </item>
+      <item>
+        <title>Version 1.2.0</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>Update Version 1.2.0</li>
+            </ul>
+          ]]>
+        </description>
+        <pubDate>Mon, 05 June 2017 07:09:00 +0000</pubDate>
+        <enclosure url="https://github.com/philsinatra/Sketch-Color-Vars/archive/1.2.0.zip" sparkle:version="1.2.0" length="86811" type="application/octet-stream" />
+      </item>
   </channel>
 </rss>
