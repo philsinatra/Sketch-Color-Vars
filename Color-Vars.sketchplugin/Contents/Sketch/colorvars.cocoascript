@@ -8,6 +8,7 @@ var file_path = '';
 var color_array = [];
 var str_scss = header + "\n";
 var str_less = header + "\n";
+var str_stylus = header + "\n";
 var str_css = header + "\n" + ":root {";
 
 
@@ -66,6 +67,10 @@ var onRun = function(context) {
       str_less += red + "," + green + "," + blue + "," + alpha + "); ";
       str_less += "\n";
 
+      str_stylus += layer_name += " = rgba(";
+      str_stylus += red + "," + green + "," + blue + "," + alpha + "); ";
+      str_stylus += "\n";
+
       str_css += "\n";
       str_css += "  --" + layer_name + ": rgba(";
       str_css += red + "," + green + "," + blue + "," + alpha + "); ";
@@ -76,6 +81,7 @@ var onRun = function(context) {
 	var output = [
 		[str_scss, 'scss'],
 		[str_less, 'less'],
+    [str_stylus, 'styl'],
 		[str_css, 'css']
 	];
 
@@ -83,6 +89,22 @@ var onRun = function(context) {
 		writeFile(output[z][0], output[z][1]);
 	}
 
-	var alertMessage = '_colors.scss|less|css saved to: ' + file_path;
+	var alertMessage = '_colors.scss | less | stylus | css saved to: ' + file_path;
   alert('Color Variables Exported!', alertMessage);
 };
+
+/*
+// Maybe you solved it already but just in case here is how you can do it:
+
+var checkbox = NSButton.alloc().initWithFrame(NSMakeRect(0,0,200,23))
+checkbox.setButtonType(NSSwitchButton)
+checkbox.setBezelStyle(0)
+checkbox.setTitle("A fancy copy here")
+checkbox.setState(NSOffState) // or NSOnState
+
+dialogWindow.addAccessoryView(checkbox)
+
+// You can get the value like this:
+
+checkbox.stringValue() // Returns 0 or 1
+*/
