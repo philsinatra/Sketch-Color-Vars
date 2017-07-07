@@ -7,10 +7,16 @@ A Sketch plugin that will export the fill color of selected layers to SCSS, LESS
 
 ## Installation
 
+### Option 1
+
 1. Download the plugin.
 1. Double click "Color-Vars.sketchplugin" to install it.
 
-**OR**
+### Option 2
+
+As of Sketch version 45, managing plugins can be done directly in the app. [Read more](https://blog.sketchapp.com/a-redesigned-color-popover-better-plugin-management-and-more-in-sketch-45-8de62b3d9abe#3221) from the official Sketch app blog. You can search for _Sketch Color Vars_ from the plugin manager.
+
+### Option 3
 
 Use [Sketch Toolbox](http://sketchtoolbox.com)
 
@@ -26,6 +32,7 @@ You will be prompted where to save the variable files:
 
 - _colors.scss
 - _colors.less
+- _colors.styl
 - _colors.css
 
 ## Limitations
@@ -49,6 +56,13 @@ $blue-4990E2: rgba(29%,56%,89%,1.00);
 @red-D0011B: rgba(82%,0%,11%,1.00);
 @green-417505: rgba(25%,46%,2%,1.00);
 @blue-4990E2: rgba(29%,56%,89%,1.00);
+```
+
+```stylus
+// _color.styl
+red-D0011B = rgba(82%,0%,11%,1.00);
+green-417505 = rgba(25%,46%,2%,1.00);
+blue-4990E2 = rgba(29%,56%,89%,1.00);
 ```
 
 ```css
