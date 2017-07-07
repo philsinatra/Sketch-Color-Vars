@@ -3,7 +3,7 @@
 /** Variables
  ---------------------------------------------------------*/
 var app = NSApplication.sharedApplication();
-var header = '/*! Sketch-Color-Vars v1.1.0 | MIT License | github.com/philsinatra/Sketch-Color-Vars/ */';
+var header = '/*! Sketch-Color-Vars v1.3.1 | MIT License | github.com/philsinatra/Sketch-Color-Vars/ */';
 var file_path = '';
 var color_array = [];
 var str_scss = header + "\n";
