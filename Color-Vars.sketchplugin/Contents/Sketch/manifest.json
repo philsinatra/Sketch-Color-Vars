@@ -1,32 +1,30 @@
 {
-  "name": "Sketch Color Vars",
-  "description": "A Sketch plugin that will export the fill color of selected layers to SCSS, LESS and CSS files.",
-  "author": "Phil Sinatra",
-  "authorEmail": "code@philsinatra.com",
-  "homepage":"https://github.com/philsinatra/Sketch-Color-Vars",
-  "version": "1.3.1",
-  "identifier" : "com.sketch.sketch-color-vars",
-  "bugs": {
-    "url": "https://github.com/philsinatra/Sketch-Color-Vars/issues"
-  },
-  "homepage": "https://github.com/philsinatra/Sketch-Color-Vars",
-  "appcast": "https://raw.githubusercontent.com/philsinatra/Sketch-Color-Vars/master/appcast.xml",
-  "license": "MIT",
-  "commands" : [
-    {
-      "script" : "colorvars.cocoascript",
-      "shortcut": "shift cmd ,",
-      "name" : "Sketch Color Vars",
-      "handlers" : {
-        "run" : "onRun"
-      },
-      "identifier" : "colorvars"
-    }
-  ],
-  "menu" : {
-    "items" : [
-      "colorvars"
-    ],
-    "title" : "Sketch Color Vars"
-  }
+	"name": "Sketch Color Vars",
+	"description": "A Sketch plugin that will export the fill color of selected layers to SCSS, LESS, Stylus and CSS files.",
+	"author": "Phil Sinatra",
+	"authorEmail": "code@philsinatra.com",
+	"homepage": "https://github.com/philsinatra/Sketch-Color-Vars",
+	"version": "1.3.2",
+	"identifier": "com.sketch.sketch-color-vars",
+	"bugs": {
+		"url": "https://github.com/philsinatra/Sketch-Color-Vars/issues"
+	},
+	"homepage": "https://github.com/philsinatra/Sketch-Color-Vars",
+	"appcast": "https://raw.githubusercontent.com/philsinatra/Sketch-Color-Vars/master/appcast.xml",
+	"license": "MIT",
+	"commands": [{
+		"script": "colorvars.cocoascript",
+		"shortcut": "shift cmd ,",
+		"name": "Sketch Color Vars",
+		"handlers": {
+			"run": "onRun"
+		},
+		"identifier": "colorvars"
+	}],
+	"menu": {
+		"items": [
+			"colorvars"
+		],
+		"title": "Sketch Color Vars"
+	}
 }
