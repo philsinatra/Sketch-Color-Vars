@@ -15,6 +15,7 @@ var str_css = header + "\n" + ":root {";
 /** onRun Event
  ---------------------------------------------------------*/
 var onRun = function(context) {
+  log('test run again');
   var doc = context.document;
   var selectedLayers = context.selection;
   var selectedCount = selectedLayers.count();
@@ -66,6 +67,7 @@ var onRun = function(context) {
       str_less += red + "," + green + "," + blue + "," + alpha + "); ";
       str_less += "\n";
 
+      str_stylus += "$";
       str_stylus += layer_name += " = rgba(";
       str_stylus += red + "," + green + "," + blue + "," + alpha + "); ";
       str_stylus += "\n";
