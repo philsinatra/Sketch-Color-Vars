@@ -1,4 +1,4 @@
-[![GitHub tag](https://img.shields.io/github/tag/philsinatra/Sketch-Color-Vars.svg?style=flat-square)]()
+[![Download from Sketchpacks.com](https://badges.sketchpacks.com/plugins/com.sketch.sketch-color-vars/version.svg)](https://api.sketchpacks.com/v1/plugins/com.sketch.sketch-color-vars/download) [![Compatible Sketch Version](https://badges.sketchpacks.com/plugins/com.sketch.sketch-color-vars/compatibility.svg)](https://sketchpacks.com/philsinatra/Sketch-Color-Vars)
 [![license](https://img.shields.io/github/license/philsinatra/Sketch-Color-Vars.svg?style=flat-square)]()
 
 # Sketch Color Variables
