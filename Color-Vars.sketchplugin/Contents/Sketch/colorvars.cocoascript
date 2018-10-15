@@ -11,9 +11,6 @@ var str_less = header + "\n";
 var str_stylus = header + "\n";
 var str_css = header + "\n" + ":root {";
 
-
-/** onRun Event
- ---------------------------------------------------------*/
 var onRun = function(context) {
   log('test run again');
   var doc = context.document;
@@ -58,23 +55,28 @@ var onRun = function(context) {
       var green = Math.round(color_array[1] * 100) + '%';
       var blue = Math.round(color_array[2] * 100) + '%';
       var alpha = parseFloat(color_array[3]).toFixed(2);
+      var rgbaValues = red + "," + green + "," + blue + "," + alpha;
 
       str_scss += "$" + layer_name + ": rgba(";
-      str_scss += red + "," + green + "," + blue + "," + alpha + "); ";
+      str_scss += rgbaValues;
+      str_scss += "); ";
       str_scss += "\n";
 
       str_less += "@" + layer_name + ": rgba(";
-      str_less += red + "," + green + "," + blue + "," + alpha + "); ";
+      str_less += rgbaValues;
+      str_less += "); ";
       str_less += "\n";
 
       str_stylus += "$";
-      str_stylus += layer_name += " = rgba(";
-      str_stylus += red + "," + green + "," + blue + "," + alpha + "); ";
+      str_stylus += layer_name + " = rgba(";
+      str_stylus += rgbaValues;
+      str_stylus += "); ";
       str_stylus += "\n";
 
       str_css += "\n";
       str_css += "  --" + layer_name + ": rgba(";
-      str_css += red + "," + green + "," + blue + "," + alpha + "); ";
+      str_css += rgbaValues;
+      str_css += "); ";
     }
   }
   str_css += "\n}";
@@ -93,19 +95,3 @@ var onRun = function(context) {
 	var alertMessage = '_colors.scss | less | stylus | css saved to: ' + file_path;
   alert('Color Variables Exported!', alertMessage);
 };
-
-/*
-// Maybe you solved it already but just in case here is how you can do it:
-
-var checkbox = NSButton.alloc().initWithFrame(NSMakeRect(0,0,200,23))
-checkbox.setButtonType(NSSwitchButton)
-checkbox.setBezelStyle(0)
-checkbox.setTitle("A fancy copy here")
-checkbox.setState(NSOffState) // or NSOnState
-
-dialogWindow.addAccessoryView(checkbox)
-
-// You can get the value like this:
-
-checkbox.stringValue() // Returns 0 or 1
-*/
